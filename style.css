@@ -1,0 +1,109 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ul
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    
+}
+ul li{
+    position: relative;
+    list-style: none;
+    height: 60px;
+    width: 60px;
+    margin: 0 30px;
+    transform: rotatey(-30deg) skew(25deg);/*rotate(30deg /grau de rotação), skew(25deg / grau de inclinação)*/
+    background: #ccc;
+    box-shadow: -1.5px 1px 3px rgba(0, 0, 0, 0.644);
+    border-radius: 50px;
+    
+}
+.lista-01{
+    background: #3b59996b;
+}
+.lista-02{  
+    background: #e0544775;
+}
+.lista-03{
+    background:#d9254673 ;
+}
+.lista-04{
+    background: #5cf27254;
+}
+.lista-05{
+    background: #d9232383;
+}
+ul li span{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transition: 0.5s;
+    display: flex !important;/*o conjunto (! importante) serve para dar maior prioridade a este comando*/
+    align-items: center;/*itens ao centro*/
+    justify-content: center;/*justificar ao centro*/
+    color: white;
+    font-size: 30px !important;
+    border-radius: 50px;
+
+}
+ul li:hover span{
+    box-shadow: transparent;
+}
+ul li:hover{
+    transform: rotate(-30deg) skew(25deg);
+    transition:ease-out 0.5s;/*o modo como vai ser a transição, e o tempo*/
+}
+/* nth-child= Seleciona um a cada quatro elementos
+    de qualquer grupo de elementos irmãos,
+    começando do quarto elemento (4, 8 12, etc.). */
+
+/* no nosso caso ele ira pegar cada um dos span e estilizar cada camada individualmente, porem como esta dentro de uma (ul li sapn) e nao definimos classes diferentes ele aplicara em todas as demais aplicaçoes com o mesmo nome*/
+ul li:hover span:nth-child(5){
+    transform: translate(40px, -40px);
+    opacity: 1;
+}
+ul li:hover span:nth-child(4){
+    transform: translate(30px,-30px);
+    opacity: 0.8;
+}
+ul li:hover span:nth-child(3){
+    transform: translate(20px,-20px);
+    opacity: 0.6;
+}
+ul li:hover span:nth-child(2){
+    transform: translate(10px,-10px);
+    opacity: 0.4;
+}
+ul li:hover span:nth-child(1){
+    transform: translate(0,0);
+    opacity: 0.2;
+}
+/* aqui ele esta colorindo cada elemento do span, como o nth-child esta vindo primeiro ele esta informando qual a posiçao da proxima tag que seria o span. por isso ele nao aplica a mesma cor para todos os elementos.*/
+ul li:nth-child(1) span{
+    background: #3A558C;
+}
+ul li:nth-child(2) span{
+    background: #D94848;
+}
+ul li:nth-child(3) span{
+    background: #D92546;
+}
+ul li:nth-child(4) span{
+    background: #2BD945;
+}
+ul li:nth-child(5) span{
+    background: #A60303;
+
+}
